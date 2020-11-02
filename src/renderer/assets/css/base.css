@@ -1,0 +1,66 @@
+html, body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+div {
+    margin: 0;
+    padding: 0;
+}
+@charset "utf-8";
+    *,html {
+    font-size: 12px
+}
+
+* {
+    -webkit-tap-highlight-color: transparent;
+    /*font-family: "Microsoft YaHei" ! important;*/
+  font-family: 'Microsoft YaHei', 'PingFang SC', '黑体';
+}
+body,dd,dl,form,h1,h2,h3,h4,input,ol,p,select,td,textarea,th,ul {
+    margin: 0;
+    padding: 0;
+    font-weight: 400
+}
+em {
+    font-style: normal
+}
+li {
+    list-style: none
+}
+a {
+    text-decoration: none
+}
+img {
+    vertical-align: middle
+}
+table {
+    border-collapse: collapse
+}
+
+textarea {
+    resize: none;
+    overflow: auto
+}
+button,input[type=button],input[type=submit],input[type=reset],textarea {
+    -webkit-appearance: none;
+    appearance: none
+}
+fieldset,img {
+    border: 0;
+    display: block
+}
+-webkit-input-placeholder {
+    color: #999
+}
+-moz-placeholder {
+    color: #999
+}
+-moz-placeholder {
+    color: #999
+}
+-ms-input-placeholder {
+    color: #999
+}

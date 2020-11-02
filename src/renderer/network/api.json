@@ -1,0 +1,20 @@
+{
+    "GET_HOME_CATEGORY": "holo/base/home-category/query",
+    "GET_BRAND_BY_CATEGORY": "holo/base/home-category/query-brand",
+    "GET_CATEGORY_BY_BRAND": "holo/base/brand/getHomeCategorys",
+    "GET_SERIES_BY_BRAND": "holo/base/holo_series/query_brand",
+    "GET_WROK": "api/work/getallbystatus",
+    "GET_WROK-NEW": "work/getAllByStatus",
+    "BRAND_LIST": "business/brand/query",
+    "AUTH_SEND_SMS": "auth/code/sms",
+    "AUTH_MOBILE_LOGIN": "auth/mobile/token",
+    "CHECK-USER-BIND": "auth/mobile/verify",
+    "GET-USER-CASE": "order/api/plan/get",
+    "GET-CASEINFO-BY-CODE": "order/api/plan/getPlanByCode",
+    "GET_PLACEINFO": "api/placeinfo/get",
+    "GET_DESIGN_PALY": "plan",
+    "GET_PLACE_INFO": "room/getAllTPlace",
+    "GET_WORK_BYENTITY": "work/findByEntity",
+    "GET_WORK_BYWORKID": "work/getallbyworkid",
+    "PLAN_DELETE": "plan/delete"
+}

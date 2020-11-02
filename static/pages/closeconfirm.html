@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>关闭窗口确认</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+
+        }
+
+        body {
+            width: 100%;
+            height: 100%;
+        }
+
+        div#container {
+            width: 100%;
+            height: 100%;
+        }
+
+        div#passwordArea {
+            margin: 40px;
+            text-align: center;
+        }
+
+        div#passwordInput {
+            background-color: #fff;
+            background-image: none;
+            border-radius: 4px;
+            border: 1px solid #dcdfe6;
+            box-sizing: border-box;
+            color: #606266;
+            display: inline-block;
+            font-size: inherit;
+            height: 40px;
+            line-height: 40px;
+            outline: 0;
+            padding: 0 15px;
+            -webkit-transition: border-color .2s cubic-bezier(.645,.045,.355,1);
+            transition: border-color .2s cubic-bezier(.645,.045,.355,1);
+            width: 50%;
+            display: block;
+            margin: 0 auto;
+            margin-top: 20px;
+        }
+
+
+        div#optionArea {
+            margin: 40px;
+            text-align: center;
+        }
+
+        button{
+            height: 30px;
+            min-width: 90px;
+            padding: 0 20px;
+            line-height: 48px;
+            font-size: 16px;
+            border: none;
+            color: #ffffff;
+            text-align: center;
+            background: #2196F3;
+            line-height: 30px;
+            border-radius: 25px;
+            transition: all .1s;
+            margin: 0 10px;
+            transition: all .2s;
+        }
+
+        button#close_confirm {
+            margin-right: 20px;
+            background: #2196F3;
+        }
+
+        button#close_cancel {
+            margin-left: 20px;
+             background: #ccc;
+        }
+
+        .top-title{
+            font-size: 18px;
+            text-align: center;
+            border-bottom: 1px solid #ccc;
+            line-height: 50px;
+
+        }
+
+    </style>
+</head>
+<body>
+<div id="container">
+    <h2 class="top-title">关闭提示</h2>
+
+    <div id="passwordArea">
+        <label>请输入密码: </label>
+        <input align="center" id="passwordInput" type="password" name="password" placeholder="请输入密码">
+    </div>
+    <div id="optionArea">
+        <button id="close_confirm">确定</button>
+        <button id="close_cancel">取消</button>
+    </div>
+</div>
+
+<script>
+
+    "use strict";
+
+    const {ipcRenderer} = require('electron');
+
+    let correctPassword = "111111";
+
+    window.onload = function() {
+        document.querySelector("#close_confirm").onclick = function() {
+            let passwordInputValue = document.querySelector("#passwordInput").value;
+            if (passwordInputValue === correctPassword) {
+                ipcRenderer.send('doCloseMainWin');
+            } else {
+                alert("密码错误");
+                return false;
+            }
+            document.querySelector("#close_confirm").value = "";
+        };
+        document.querySelector("#close_cancel").onclick = function() {
+            ipcRenderer.send('cancelCloseMainWin');
+            document.querySelector("#close_cancel").value = "";
+        }
+    }
+</script>
+
+</body>
+</html>
